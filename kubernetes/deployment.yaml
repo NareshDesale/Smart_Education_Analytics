@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: smart-education-deployment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: smart-education
+
+  template:
+    metadata:
+      labels:
+        app: smart-education
+
+    spec:
+      containers:
+      - name: smart-education
+
+        image: smart-education-analytics:latest
+
+        imagePullPolicy: Never
+
+        command: ["python","src/main.py"]
