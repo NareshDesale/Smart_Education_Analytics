@@ -18,10 +18,7 @@ spec:
 
     spec:
       containers:
-      - name: smart-education
-
-        image: smart-education-analytics:latest
-
-        imagePullPolicy: Never
-
-        command: ["python","src/main.py"]
+        - name: smart-education-analytics
+          image: naresh110703/smart-education-analytics:latest
+          imagePullPolicy: Always
+          command: ["python", "src/main.py"]
